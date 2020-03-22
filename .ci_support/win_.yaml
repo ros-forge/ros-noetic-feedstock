@@ -1,0 +1,26 @@
+boost:
+- 1.70.0
+bzip2:
+- '1'
+c_compiler:
+- vs2017
+channel_sources:
+- ros-forge/label/staging,conda-forge,defaults
+channel_targets:
+- ros-forge staging
+cxx_compiler:
+- vs2017
+openssl:
+- 1.1.1
+pin_run_as_build:
+  boost:
+    max_pin: x.x.x
+  bzip2:
+    max_pin: x
+  openssl:
+    max_pin: x.x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- '3.7'
