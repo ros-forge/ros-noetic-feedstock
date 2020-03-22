@@ -1,0 +1,12 @@
+ros_distro: noetic
+
+# mapping for package keys
+conda_index:
+  - conda-forge.yaml
+
+packages_skip_by_deps:
+
+packages_select_by_deps:
+  - ros_comm
+
+patch_dir: patch
