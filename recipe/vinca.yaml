@@ -10,6 +10,5 @@ packages_select_by_deps:
   - ros_comm
   - ros
   - roslint
-  - rqt
 
 patch_dir: patch

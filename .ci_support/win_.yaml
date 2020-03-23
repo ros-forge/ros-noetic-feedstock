@@ -5,9 +5,9 @@ bzip2:
 c_compiler:
 - vs2017
 channel_sources:
-- ros-forge/label/staging,conda-forge,defaults
+- ros-forge/label/noetic-staging,conda-forge,defaults
 channel_targets:
-- ros-forge staging
+- ros-forge noetic-staging
 cxx_compiler:
 - vs2017
 openssl:

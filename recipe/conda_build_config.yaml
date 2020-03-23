@@ -1,7 +1,7 @@
 channel_sources:
-  - ros-forge/label/staging,conda-forge,defaults
+  - ros-forge/label/noetic-staging,conda-forge,defaults
 channel_targets:
-  - ros-forge staging
+  - ros-forge noetic-staging
 c_compiler:                    # [win]
   - vs2017                     # [win]
 cxx_compiler:                  # [win]
