@@ -5,11 +5,11 @@ conda_index:
   - conda-forge.yaml
 
 packages_skip_by_deps:
+  - ros_comm
+  - ros
+  - roslint
 
 packages_select_by_deps:
-  - catkin
-  # - ros_comm
-  # - ros
-  # - roslint
+  - rqt
 
 patch_dir: patch
