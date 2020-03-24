@@ -7,8 +7,9 @@ conda_index:
 packages_skip_by_deps:
 
 packages_select_by_deps:
-  - ros_comm
-  - ros
-  - roslint
+  - catkin
+  # - ros_comm
+  # - ros
+  # - roslint
 
 patch_dir: patch
