@@ -31,6 +31,8 @@ packages_skip_by_deps:
   - common_msgs
 
 packages_select_by_deps:
-  - geometry
+  - tf2
+  - tf2_py
+  - tf2_ros
 
 patch_dir: patch
