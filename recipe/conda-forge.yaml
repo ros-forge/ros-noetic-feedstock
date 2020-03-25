@@ -238,3 +238,9 @@ python-pycryptodome:
   win64: [pycryptodome]
 python-catkin-pkg-modules:
   win64: [catkin_pkg]
+python3-pygraphviz:
+  win64: []
+python3-qt5-bindings-webkit:
+  win64: []
+python3-cairo:
+  win64: [pycairo]
