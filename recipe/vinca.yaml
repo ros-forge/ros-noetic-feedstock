@@ -9,8 +9,6 @@ packages_skip_by_deps:
   - ros
   - roslint
   - rqt
-
-packages_select_by_deps:
   - rqt_action
   - rqt_bag
   - rqt_bag_plugins
@@ -30,5 +28,10 @@ packages_select_by_deps:
   - rqt_top
   - rqt_topic
   - rqt_web
+
+packages_select_by_deps:
+  - geometry
+  - geometry2
+
 
 patch_dir: patch

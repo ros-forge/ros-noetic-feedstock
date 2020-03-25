@@ -1,97 +1,67 @@
 package:
   name: ros
-  version: 2020.03.24
+  version: 2020.03.25
 
 source:
-  - git_url: https://github.com/ros-gbp/rqt_service_caller-release.git
-    git_rev: release/noetic/rqt_service_caller/0.4.9-1
-    folder: ros-noetic-rqt-service-caller/src/work
-  - git_url: https://github.com/ros-gbp/rqt_action-release.git
-    git_rev: release/noetic/rqt_action/0.4.9-1
-    folder: ros-noetic-rqt-action/src/work
-  - git_url: https://github.com/ros-gbp/common_msgs-release.git
-    git_rev: release/noetic/sensor_msgs/1.12.7-1
-    folder: ros-noetic-sensor-msgs/src/work
-  - git_url: https://github.com/ros-gbp/rqt_publisher-release.git
-    git_rev: release/noetic/rqt_publisher/0.4.9-1
-    folder: ros-noetic-rqt-publisher/src/work
-  - git_url: https://github.com/ros-gbp/rqt-release.git
-    git_rev: release/noetic/rqt_py_common/0.5.1-1
-    folder: ros-noetic-rqt-py-common/src/work
-  - git_url: https://github.com/ros-gbp/rqt_top-release.git
-    git_rev: release/noetic/rqt_top/0.4.9-1
-    folder: ros-noetic-rqt-top/src/work
-  - git_url: https://github.com/ros-gbp/webkit_dependency-release.git
-    git_rev: release/noetic/webkit_dependency/1.1.2-1
-    folder: ros-noetic-webkit-dependency/src/work
-  - git_url: https://github.com/ros-gbp/qt_gui_core-release.git
-    git_rev: release/noetic/qt_dotgraph/0.4.0-1
-    folder: ros-noetic-qt-dotgraph/src/work
-  - git_url: https://github.com/ros-gbp/rqt_web-release.git
-    git_rev: release/noetic/rqt_web/0.4.9-1
-    folder: ros-noetic-rqt-web/src/work
-  - git_url: https://github.com/ros-gbp/actionlib-release.git
-    git_rev: release/noetic/actionlib/1.13.0-1
-    folder: ros-noetic-actionlib/src/work
-  - git_url: https://github.com/ros-gbp/rqt_srv-release.git
-    git_rev: release/noetic/rqt_srv/0.4.8-1
-    folder: ros-noetic-rqt-srv/src/work
-  - git_url: https://github.com/ros-gbp/qwt_dependency-release.git
-    git_rev: release/noetic/qwt_dependency/1.1.1-1
-    folder: ros-noetic-qwt-dependency/src/work
-  - git_url: https://github.com/ros-gbp/common_msgs-release.git
-    git_rev: release/noetic/actionlib_msgs/1.12.7-1
-    folder: ros-noetic-actionlib-msgs/src/work
-  - git_url: https://github.com/ros-gbp/rqt_graph-release.git
-    git_rev: release/noetic/rqt_graph/0.4.12-1
-    folder: ros-noetic-rqt-graph/src/work
-  - git_url: https://github.com/ros-gbp/rqt_logger_level-release.git
-    git_rev: release/noetic/rqt_logger_level/0.4.9-1
-    folder: ros-noetic-rqt-logger-level/src/work
-  - git_url: https://github.com/ros-gbp/rqt_plot-release.git
-    git_rev: release/noetic/rqt_plot/0.4.10-1
-    folder: ros-noetic-rqt-plot/src/work
-  - git_url: https://github.com/ros-gbp/rqt_console-release.git
-    git_rev: release/noetic/rqt_console/0.4.9-1
-    folder: ros-noetic-rqt-console/src/work
-  - git_url: https://github.com/ros-gbp/rqt_shell-release.git
-    git_rev: release/noetic/rqt_shell/0.4.10-1
-    folder: ros-noetic-rqt-shell/src/work
-  - git_url: https://github.com/ros-gbp/rqt_bag-release.git
-    git_rev: release/noetic/rqt_bag/0.4.13-1
-    folder: ros-noetic-rqt-bag/src/work
-  - git_url: https://github.com/ros-gbp/rqt_topic-release.git
-    git_rev: release/noetic/rqt_topic/0.4.12-1
-    folder: ros-noetic-rqt-topic/src/work
-  - git_url: https://github.com/ros-gbp/rqt_bag-release.git
-    git_rev: release/noetic/rqt_bag_plugins/0.4.13-1
-    folder: ros-noetic-rqt-bag-plugins/src/work
-  - git_url: https://github.com/ros-gbp/rqt_py_console-release.git
-    git_rev: release/noetic/rqt_py_console/0.4.9-1
-    folder: ros-noetic-rqt-py-console/src/work
-  - git_url: https://github.com/ros-gbp/common_msgs-release.git
-    git_rev: release/noetic/geometry_msgs/1.12.7-1
-    folder: ros-noetic-geometry-msgs/src/work
-  - git_url: https://github.com/ros-gbp/qt_gui_core-release.git
-    git_rev: release/noetic/qt_gui_py_common/0.4.0-1
-    folder: ros-noetic-qt-gui-py-common/src/work
-  - git_url: https://github.com/ros-gbp/rqt_launch-release.git
-    git_rev: release/noetic/rqt_launch/0.4.8-1
-    folder: ros-noetic-rqt-launch/src/work
-  - git_url: https://github.com/ros-gbp/rqt_msg-release.git
-    git_rev: release/noetic/rqt_msg/0.4.9-1
-    folder: ros-noetic-rqt-msg/src/work
-  - git_url: https://github.com/ros-gbp/rqt_dep-release.git
-    git_rev: release/noetic/rqt_dep/0.4.10-1
-    folder: ros-noetic-rqt-dep/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/geometry2/0.7.0-1
+    folder: ros-noetic-geometry2/src/work
+  - git_url: https://github.com/ros-gbp/geometry-release.git
+    git_rev: release/noetic/kdl_conversions/1.13.0-1
+    folder: ros-noetic-kdl-conversions/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_geometry_msgs/0.7.0-1
+    folder: ros-noetic-tf2-geometry-msgs/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2/0.7.0-1
+    folder: ros-noetic-tf2/src/work
+  - git_url: https://github.com/ros-gbp/geometry-release.git
+    git_rev: release/noetic/tf_conversions/1.13.0-1
+    folder: ros-noetic-tf-conversions/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_eigen/0.7.0-1
+    folder: ros-noetic-tf2-eigen/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_bullet/0.7.0-1
+    folder: ros-noetic-tf2-bullet/src/work
+  - git_url: https://github.com/ros-gbp/geometry-release.git
+    git_rev: release/noetic/geometry/1.13.0-1
+    folder: ros-noetic-geometry/src/work
+  - git_url: https://github.com/ros-gbp/geometry-release.git
+    git_rev: release/noetic/eigen_conversions/1.13.0-1
+    folder: ros-noetic-eigen-conversions/src/work
+  - git_url: https://github.com/ros-gbp/geometry-release.git
+    git_rev: release/noetic/tf/1.13.0-1
+    folder: ros-noetic-tf/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_msgs/0.7.0-1
+    folder: ros-noetic-tf2-msgs/src/work
+  - git_url: https://github.com/ros-gbp/geometry_angles_utils-release.git
+    git_rev: release/noetic/angles/1.9.13-1
+    folder: ros-noetic-angles/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_sensor_msgs/0.7.0-1
+    folder: ros-noetic-tf2-sensor-msgs/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_py/0.7.0-1
+    folder: ros-noetic-tf2-py/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_ros/0.7.0-1
+    folder: ros-noetic-tf2-ros/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_tools/0.7.0-1
+    folder: ros-noetic-tf2-tools/src/work
+  - git_url: https://github.com/ros-gbp/geometry2-release.git
+    git_rev: release/noetic/tf2_kdl/0.7.0-1
+    folder: ros-noetic-tf2-kdl/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-rqt-service-caller
-    version: 0.4.9
+  - name: ros-noetic-geometry2
+    version: 0.7.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -101,182 +71,30 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
+        - ros-noetic-tf2
+        - ros-noetic-tf2-bullet
+        - ros-noetic-tf2-eigen
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-kdl
+        - ros-noetic-tf2-msgs
+        - ros-noetic-tf2-py
+        - ros-noetic-tf2-ros
+        - ros-noetic-tf2-sensor-msgs
+        - ros-noetic-tf2-tools
       run:
         - python {{ python }}
-        - ros-noetic-rosservice
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-py-common
-        - rospkg
+        - ros-noetic-tf2
+        - ros-noetic-tf2-bullet
+        - ros-noetic-tf2-eigen
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-kdl
+        - ros-noetic-tf2-msgs
+        - ros-noetic-tf2-py
+        - ros-noetic-tf2-ros
+        - ros-noetic-tf2-sensor-msgs
+        - ros-noetic-tf2-tools
     script: bld_catkin.bat
-  - name: ros-noetic-rqt-action
-    version: 0.4.9
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-rospy
-        - ros-noetic-rqt-msg
-        - ros-noetic-rqt-py-common
-      run:
-        - python {{ python }}
-        - ros-noetic-rospy
-        - ros-noetic-rqt-msg
-        - ros-noetic-rqt-py-common
-    script: bld_catkin.bat
-  - name: ros-noetic-sensor-msgs
-    version: 1.12.7
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-geometry-msgs
-        - ros-noetic-message-generation
-        - ros-noetic-message-runtime
-        - ros-noetic-rosbag
-        - ros-noetic-rosunit
-        - ros-noetic-std-msgs
-      run:
-        - python {{ python }}
-        - ros-noetic-geometry-msgs
-        - ros-noetic-message-runtime
-        - ros-noetic-std-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-publisher
-    version: 0.4.9
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-gui-py-common
-        - ros-noetic-roslib
-        - ros-noetic-rosmsg
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-py-common
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-py-common
-    version: 0.5.1
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-actionlib
-        - ros-noetic-catkin
-        - ros-noetic-genmsg
-        - ros-noetic-genpy
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-gui
-        - ros-noetic-rosbag
-        - ros-noetic-roslib
-        - ros-noetic-rospy
-        - ros-noetic-rostopic
-        - ros-noetic-std-msgs
-      run:
-        - python {{ python }}
-        - ros-noetic-actionlib
-        - ros-noetic-genpy
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-gui
-        - ros-noetic-rosbag
-        - ros-noetic-roslib
-        - ros-noetic-rospy
-        - ros-noetic-rostopic
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-top
-    version: 0.4.9
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - psutil
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-rospy
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-    script: bld_catkin.bat
-  - name: ros-noetic-webkit-dependency
-    version: 1.1.2
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-    script: bld_catkin.bat
-  - name: ros-noetic-qt-dotgraph
-    version: 0.4.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - pydot
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-web
-    version: 0.4.9
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-gui
-        - ros-noetic-rospy
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-webkit-dependency
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-actionlib
+  - name: ros-noetic-kdl-conversions
     version: 1.13.0
     requirements:
       build:
@@ -285,271 +103,133 @@ outputs:
         - ninja
         - cmake
       host:
-        - boost
-        - python {{ python }}
-        - ros-noetic-actionlib-msgs
-        - ros-noetic-catkin
-        - ros-noetic-message-generation
-        - ros-noetic-roscpp
-        - ros-noetic-rosnode
-        - ros-noetic-rospy
-        - ros-noetic-rostest
-        - ros-noetic-rosunit
-        - ros-noetic-std-msgs
-      run:
-        - boost
-        - python {{ python }}
-        - ros-noetic-actionlib-msgs
-        - ros-noetic-message-runtime
-        - ros-noetic-roscpp
-        - ros-noetic-rospy
-        - ros-noetic-rostest
-        - ros-noetic-std-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-srv
-    version: 0.4.8
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
+        - orocos-kdl
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-rosmsg
-        - ros-noetic-rospy
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-msg
+        - ros-noetic-geometry-msgs
       run:
-        - python {{ python }}
-        - ros-noetic-rosmsg
-        - ros-noetic-rospy
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-msg
-    script: bld_catkin.bat
-  - name: ros-noetic-qwt-dependency
-    version: 1.1.1
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-    script: bld_catkin.bat
-  - name: ros-noetic-actionlib-msgs
-    version: 1.12.7
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-message-generation
-        - ros-noetic-message-runtime
-        - ros-noetic-std-msgs
-      run:
-        - python {{ python }}
-        - ros-noetic-message-generation
-        - ros-noetic-message-runtime
-        - ros-noetic-std-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-graph
-    version: 0.4.12
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-dotgraph
-        - ros-noetic-rosgraph
-        - ros-noetic-rosgraph-msgs
-        - ros-noetic-roslib
-        - ros-noetic-rosnode
-        - ros-noetic-rospy
-        - ros-noetic-rosservice
-        - ros-noetic-rostopic
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-logger-level
-    version: 0.4.9
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-rosnode
-        - ros-noetic-rospy
-        - ros-noetic-rosservice
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-plot
-    version: 0.4.10
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - matplotlib
-        - numpy
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-gui-py-common
-        - ros-noetic-qwt-dependency
-        - ros-noetic-rosgraph
-        - ros-noetic-rostopic
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-py-common
-        - ros-noetic-std-msgs
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-console
-    version: 0.4.9
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-roslib
-        - ros-noetic-rospy
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-logger-level
-        - ros-noetic-rqt-py-common
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-shell
-    version: 0.4.10
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-gui
-        - ros-noetic-qt-gui-py-common
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-bag
-    version: 0.4.13
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-rosbag
-        - ros-noetic-rosgraph-msgs
-        - ros-noetic-roslib
-        - ros-noetic-rosnode
-        - ros-noetic-rospy
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-topic
-    version: 0.4.12
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-rostopic
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-std-msgs
-        - rospkg
-    script: bld_catkin.bat
-  - name: ros-noetic-rqt-bag-plugins
-    version: 0.4.13
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - pillow
-        - pycairo
+        - orocos-kdl
         - python {{ python }}
         - ros-noetic-geometry-msgs
-        - ros-noetic-rosbag
-        - ros-noetic-roslib
-        - ros-noetic-rospy
-        - ros-noetic-rqt-bag
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-plot
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
     script: bld_catkin.bat
-  - name: ros-noetic-rqt-py-console
-    version: 0.4.9
+  - name: ros-noetic-tf2-geometry-msgs
+    version: 0.7.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - orocos-kdl
+        - python {{ python }}
+        - python-orocos-kdl
+        - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-ros-environment
+        - ros-noetic-rostest
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
+      run:
+        - orocos-kdl
+        - python {{ python }}
+        - python-orocos-kdl
+        - ros-noetic-geometry-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-tf2
+    version: 0.7.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - console_bridge
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-rostime
+        - ros-noetic-tf2-msgs
+      run:
+        - console_bridge
+        - python {{ python }}
+        - ros-noetic-geometry-msgs
+        - ros-noetic-rostime
+        - ros-noetic-tf2-msgs
+    script: bld_catkin.bat
+  - name: ros-noetic-tf-conversions
+    version: 1.13.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - orocos-kdl
+        - python {{ python }}
+        - python-orocos-kdl
+        - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-kdl-conversions
+        - ros-noetic-tf
+      run:
+        - eigen
+        - orocos-kdl
+        - python {{ python }}
+        - python-orocos-kdl
+        - ros-noetic-geometry-msgs
+        - ros-noetic-kdl-conversions
+        - ros-noetic-tf
+    script: bld_catkin.bat
+  - name: ros-noetic-tf2-eigen
+    version: 0.7.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-geometry-msgs
+        - ros-noetic-tf2
+      run:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-geometry-msgs
+        - ros-noetic-tf2
+    script: bld_catkin.bat
+  - name: ros-noetic-tf2-bullet
+    version: 0.7.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - bullet
+        - pkg-config
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-tf2
+      run:
+        - bullet
+        - python {{ python }}
+        - ros-noetic-geometry-msgs
+        - ros-noetic-tf2
+    script: bld_catkin.bat
+  - name: ros-noetic-geometry
+    version: 1.13.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -558,19 +238,22 @@ outputs:
         - cmake
       host:
         - python {{ python }}
+        - ros-noetic-angles
         - ros-noetic-catkin
+        - ros-noetic-eigen-conversions
+        - ros-noetic-kdl-conversions
+        - ros-noetic-tf
+        - ros-noetic-tf-conversions
       run:
         - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-gui
-        - ros-noetic-qt-gui-py-common
-        - ros-noetic-rospy
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - rospkg
+        - ros-noetic-angles
+        - ros-noetic-eigen-conversions
+        - ros-noetic-kdl-conversions
+        - ros-noetic-tf
+        - ros-noetic-tf-conversions
     script: bld_catkin.bat
-  - name: ros-noetic-geometry-msgs
-    version: 1.12.7
+  - name: ros-noetic-eigen-conversions
+    version: 1.13.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -578,18 +261,60 @@ outputs:
         - ninja
         - cmake
       host:
+        - eigen
+        - orocos-kdl
         - python {{ python }}
         - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-std-msgs
+      run:
+        - eigen
+        - orocos-kdl
+        - python {{ python }}
+        - ros-noetic-geometry-msgs
+        - ros-noetic-std-msgs
+    script: bld_catkin.bat
+  - name: ros-noetic-tf
+    version: 1.13.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - graphviz
+        - python {{ python }}
+        - ros-noetic-angles
+        - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-filters
         - ros-noetic-message-generation
         - ros-noetic-message-runtime
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-rostest
+        - ros-noetic-rostime
+        - ros-noetic-rosunit
+        - ros-noetic-roswtf
+        - ros-noetic-sensor-msgs
         - ros-noetic-std-msgs
+        - ros-noetic-tf2-ros
       run:
+        - graphviz
         - python {{ python }}
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-filters
         - ros-noetic-message-runtime
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-roswtf
+        - ros-noetic-sensor-msgs
         - ros-noetic-std-msgs
+        - ros-noetic-tf2-ros
     script: bld_catkin.bat
-  - name: ros-noetic-qt-gui-py-common
-    version: 0.4.0
+  - name: ros-noetic-tf2-msgs
+    version: 0.7.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -598,14 +323,18 @@ outputs:
         - cmake
       host:
         - python {{ python }}
+        - ros-noetic-actionlib-msgs
         - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-generation
       run:
         - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - rospkg
+        - ros-noetic-actionlib-msgs
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-generation
     script: bld_catkin.bat
-  - name: ros-noetic-rqt-launch
-    version: 0.4.8
+  - name: ros-noetic-angles
+    version: 1.9.13
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -615,25 +344,39 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-python-qt-binding
-        - ros-noetic-roslaunch
+        - ros-noetic-rosunit
+      run:
+        - python {{ python }}
+    script: bld_catkin.bat
+  - name: ros-noetic-tf2-sensor-msgs
+    version: 0.7.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-geometry-msgs
+        - ros-noetic-rostest
+        - ros-noetic-sensor-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
+      run:
+        - eigen
+        - python {{ python }}
+        - python-orocos-kdl
         - ros-noetic-rospy
-        - ros-noetic-rqt-console
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-py-common
-      run:
-        - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-roslaunch
-        - ros-noetic-rospy
-        - ros-noetic-rqt-console
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-py-common
+        - ros-noetic-sensor-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
     script: bld_catkin.bat
-  - name: ros-noetic-rqt-msg
-    version: 0.4.9
+  - name: ros-noetic-tf2-py
+    version: 0.7.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -643,20 +386,15 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
+        - ros-noetic-rospy
+        - ros-noetic-tf2
       run:
         - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-roslib
-        - ros-noetic-rosmsg
         - ros-noetic-rospy
-        - ros-noetic-rqt-console
-        - ros-noetic-rqt-gui
-        - ros-noetic-rqt-gui-py
-        - ros-noetic-rqt-py-common
-        - rospkg
+        - ros-noetic-tf2
     script: bld_catkin.bat
-  - name: ros-noetic-rqt-dep
-    version: 0.4.10
+  - name: ros-noetic-tf2-ros
+    version: 0.7.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -664,18 +402,80 @@ outputs:
         - ninja
         - cmake
       host:
-        - mock
         - python {{ python }}
+        - ros-noetic-actionlib
+        - ros-noetic-actionlib-msgs
         - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-filters
+        - ros-noetic-roscpp
+        - ros-noetic-rosgraph
+        - ros-noetic-rospy
+        - ros-noetic-rostest
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-msgs
+        - ros-noetic-tf2-py
+        - ros-noetic-xmlrpcpp
       run:
         - python {{ python }}
-        - ros-noetic-python-qt-binding
-        - ros-noetic-qt-dotgraph
-        - ros-noetic-qt-gui
-        - ros-noetic-qt-gui-py-common
-        - ros-noetic-rqt-graph
-        - ros-noetic-rqt-gui-py
-        - rospkg
+        - ros-noetic-actionlib
+        - ros-noetic-actionlib-msgs
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-filters
+        - ros-noetic-roscpp
+        - ros-noetic-rosgraph
+        - ros-noetic-rospy
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-msgs
+        - ros-noetic-tf2-py
+        - ros-noetic-xmlrpcpp
+    script: bld_catkin.bat
+  - name: ros-noetic-tf2-tools
+    version: 0.7.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-tf2
+        - ros-noetic-tf2-msgs
+        - ros-noetic-tf2-ros
+      run:
+        - python {{ python }}
+        - ros-noetic-tf2
+        - ros-noetic-tf2-msgs
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-tf2-kdl
+    version: 0.7.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - orocos-kdl
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-ros-environment
+        - ros-noetic-rostest
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
+      run:
+        - eigen
+        - orocos-kdl
+        - python {{ python }}
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
     script: bld_catkin.bat
 
 about:
