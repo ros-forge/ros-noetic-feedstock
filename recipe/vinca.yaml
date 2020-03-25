@@ -28,8 +28,9 @@ packages_skip_by_deps:
   - rqt_top
   - rqt_topic
   - rqt_web
+  - common_msgs
 
 packages_select_by_deps:
-  - common_msgs
+  - geometry
 
 patch_dir: patch
