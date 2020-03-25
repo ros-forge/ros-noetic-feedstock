@@ -28,10 +28,9 @@ packages_skip_by_deps:
   - rqt_top
   - rqt_topic
   - rqt_web
+  - geometry2
 
 packages_select_by_deps:
   - geometry
-  - geometry2
-
 
 patch_dir: patch
