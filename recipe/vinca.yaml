@@ -29,10 +29,11 @@ packages_skip_by_deps:
   - rqt_topic
   - rqt_web
   - common_msgs
-
-packages_select_by_deps:
   - tf2
   - tf2_py
   - tf2_ros
+
+packages_select_by_deps:
+  - angles
 
 patch_dir: patch
