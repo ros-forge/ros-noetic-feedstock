@@ -34,8 +34,9 @@ packages_skip_by_deps:
   - tf2_ros
   - angles
   - geometry
+  - geometry2
 
 packages_select_by_deps:
-  - geometry2
+  - laser_geometry
 
 patch_dir: patch
