@@ -32,8 +32,9 @@ packages_skip_by_deps:
   - tf2
   - tf2_py
   - tf2_ros
+  - angles
 
 packages_select_by_deps:
-  - angles
+  - geometry
 
 patch_dir: patch
