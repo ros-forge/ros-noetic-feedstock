@@ -3,20 +3,17 @@ package:
   version: 2020.03.26
 
 source:
-  - git_url: https://github.com/ros-gbp/navigation_msgs-release.git
-    git_rev: release/noetic/move_base_msgs/1.14.0-1
-    folder: ros-noetic-move-base-msgs/src/work
-  - git_url: https://github.com/ros-gbp/navigation_msgs-release.git
-    git_rev: release/noetic/map_msgs/1.14.0-1
-    folder: ros-noetic-map-msgs/src/work
+  - git_url: https://github.com/ros-gbp/resource_retriever-release.git
+    git_rev: release/noetic/resource_retriever/1.12.6-1
+    folder: ros-noetic-resource-retriever/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-move-base-msgs
-    version: 1.14.0
+  - name: ros-noetic-resource-retriever
+    version: 1.12.6
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -24,40 +21,19 @@ outputs:
         - ninja
         - cmake
       host:
-        - python {{ python }}
-        - ros-noetic-actionlib-msgs
-        - ros-noetic-catkin
-        - ros-noetic-geometry-msgs
-        - ros-noetic-message-generation
-        - ros-noetic-message-runtime
-      run:
-        - python {{ python }}
-        - ros-noetic-actionlib-msgs
-        - ros-noetic-geometry-msgs
-        - ros-noetic-message-runtime
-    script: bld_catkin.bat
-  - name: ros-noetic-map-msgs
-    version: 1.14.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
+        - boost
+        - libcurl
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-message-generation
-        - ros-noetic-message-runtime
-        - ros-noetic-nav-msgs
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
+        - ros-noetic-rosconsole
+        - ros-noetic-roslib
       run:
+        - boost
+        - libcurl
         - python {{ python }}
-        - ros-noetic-message-runtime
-        - ros-noetic-nav-msgs
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
+        - ros-noetic-rosconsole
+        - ros-noetic-roslib
+        - rospkg
     script: bld_catkin.bat
 
 about:

@@ -36,9 +36,10 @@ packages_skip_by_deps:
   - geometry
   - geometry2
   - laser_geometry
-
-packages_select_by_deps:
   - map_msgs
   - move_base_msgs
+
+packages_select_by_deps:
+  - resource_retriever
 
 patch_dir: patch
