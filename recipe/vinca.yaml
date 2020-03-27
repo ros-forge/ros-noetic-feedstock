@@ -39,8 +39,10 @@ packages_skip_by_deps:
   - map_msgs
   - move_base_msgs
   - resource_retriever
+  - urdf
 
 packages_select_by_deps:
-  - urdf
+  - octomap
+  - rc_common_msgs
 
 patch_dir: patch

@@ -1,25 +1,22 @@
 package:
   name: ros
-  version: 2020.03.26
+  version: 2020.03.27
 
 source:
-  - git_url: https://github.com/ros-gbp/urdf-release.git
-    git_rev: release/noetic/urdf_parser_plugin/1.13.2-1
-    folder: ros-noetic-urdf-parser-plugin/src/work
-  - git_url: https://github.com/ros-gbp/urdf-release.git
-    git_rev: release/noetic/urdf/1.13.2-1
-    folder: ros-noetic-urdf/src/work
-  - git_url: https://github.com/ros-gbp/rosconsole_bridge-release.git
-    git_rev: release/noetic/rosconsole_bridge/0.5.4-1
-    folder: ros-noetic-rosconsole-bridge/src/work
+  - git_url: https://github.com/roboception-gbp/rc_common_msgs-release.git
+    git_rev: release/noetic/rc_common_msgs/0.4.1-1
+    folder: ros-noetic-rc-common-msgs/src/work
+  - git_url: https://github.com/ros-gbp/octomap-release.git
+    git_rev: release/noetic/octomap/1.9.5-1
+    folder: ros-noetic-octomap/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-urdf-parser-plugin
-    version: 1.13.2
+  - name: ros-noetic-rc-common-msgs
+    version: 0.4.1
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -29,13 +26,15 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - urdfdom_headers
+        - ros-noetic-message-generation
+        - ros-noetic-std-msgs
       run:
         - python {{ python }}
-        - urdfdom_headers
+        - ros-noetic-message-runtime
+        - ros-noetic-std-msgs
     script: bld_catkin.bat
-  - name: ros-noetic-urdf
-    version: 1.13.2
+  - name: ros-noetic-octomap
+    version: 1.9.5
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -43,47 +42,10 @@ outputs:
         - ninja
         - cmake
       host:
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-cmake-modules
-        - ros-noetic-pluginlib
-        - ros-noetic-rosconsole-bridge
-        - ros-noetic-roscpp
-        - ros-noetic-rostest
-        - ros-noetic-urdf-parser-plugin
-        - tinyxml
-        - tinyxml2
-        - urdfdom
-        - urdfdom_headers
-      run:
-        - python {{ python }}
-        - ros-noetic-pluginlib
-        - ros-noetic-rosconsole-bridge
-        - ros-noetic-roscpp
-        - tinyxml
-        - tinyxml2
-        - urdfdom
-        - urdfdom_headers
-    script: bld_catkin.bat
-  - name: ros-noetic-rosconsole-bridge
-    version: 0.5.4
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
         - cmake
-      host:
-        - console_bridge
         - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-cpp-common
-        - ros-noetic-rosconsole
       run:
-        - console_bridge
         - python {{ python }}
-        - ros-noetic-cpp-common
-        - ros-noetic-rosconsole
     script: bld_catkin.bat
 
 about:
