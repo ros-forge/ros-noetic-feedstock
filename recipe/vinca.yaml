@@ -38,8 +38,9 @@ packages_skip_by_deps:
   - laser_geometry
   - map_msgs
   - move_base_msgs
+  - resource_retriever
 
 packages_select_by_deps:
-  - resource_retriever
+  - urdf
 
 patch_dir: patch
