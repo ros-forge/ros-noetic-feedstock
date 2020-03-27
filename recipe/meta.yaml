@@ -3,17 +3,20 @@ package:
   version: 2020.03.26
 
 source:
-  - git_url: https://github.com/ros-gbp/laser_geometry-release.git
-    git_rev: release/noetic/laser_geometry/1.6.5-1
-    folder: ros-noetic-laser-geometry/src/work
+  - git_url: https://github.com/ros-gbp/navigation_msgs-release.git
+    git_rev: release/noetic/move_base_msgs/1.14.0-1
+    folder: ros-noetic-move-base-msgs/src/work
+  - git_url: https://github.com/ros-gbp/navigation_msgs-release.git
+    git_rev: release/noetic/map_msgs/1.14.0-1
+    folder: ros-noetic-map-msgs/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-laser-geometry
-    version: 1.6.5
+  - name: ros-noetic-move-base-msgs
+    version: 1.14.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -21,26 +24,40 @@ outputs:
         - ninja
         - cmake
       host:
-        - boost
-        - eigen
         - python {{ python }}
-        - ros-noetic-angles
+        - ros-noetic-actionlib-msgs
         - ros-noetic-catkin
-        - ros-noetic-roscpp
-        - ros-noetic-rosunit
-        - ros-noetic-sensor-msgs
-        - ros-noetic-tf
-        - ros-noetic-tf2
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-generation
+        - ros-noetic-message-runtime
       run:
-        - boost
-        - eigen
-        - numpy
         - python {{ python }}
-        - ros-noetic-angles
-        - ros-noetic-roscpp
+        - ros-noetic-actionlib-msgs
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-runtime
+    script: bld_catkin.bat
+  - name: ros-noetic-map-msgs
+    version: 1.14.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-message-generation
+        - ros-noetic-message-runtime
+        - ros-noetic-nav-msgs
         - ros-noetic-sensor-msgs
-        - ros-noetic-tf
-        - ros-noetic-tf2
+        - ros-noetic-std-msgs
+      run:
+        - python {{ python }}
+        - ros-noetic-message-runtime
+        - ros-noetic-nav-msgs
+        - ros-noetic-sensor-msgs
+        - ros-noetic-std-msgs
     script: bld_catkin.bat
 
 about:
