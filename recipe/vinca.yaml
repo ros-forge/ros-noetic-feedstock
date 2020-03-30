@@ -42,7 +42,6 @@ packages_skip_by_deps:
   - urdf
 
 packages_select_by_deps:
-  - octomap
-  - rc_common_msgs
+  - xacro
 
 patch_dir: patch

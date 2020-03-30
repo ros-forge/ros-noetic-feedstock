@@ -1,22 +1,19 @@
 package:
   name: ros
-  version: 2020.03.27
+  version: 2020.03.30
 
 source:
-  - git_url: https://github.com/roboception-gbp/rc_common_msgs-release.git
-    git_rev: release/noetic/rc_common_msgs/0.4.1-1
-    folder: ros-noetic-rc-common-msgs/src/work
-  - git_url: https://github.com/ros-gbp/octomap-release.git
-    git_rev: release/noetic/octomap/1.9.5-1
-    folder: ros-noetic-octomap/src/work
+  - git_url: https://github.com/ros-gbp/xacro-release.git
+    git_rev: release/noetic/xacro/1.14.1-1
+    folder: ros-noetic-xacro/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-rc-common-msgs
-    version: 0.4.1
+  - name: ros-noetic-xacro
+    version: 1.14.1
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -26,26 +23,12 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-message-generation
-        - ros-noetic-std-msgs
+        - ros-noetic-roslaunch
+        - ros-noetic-roslint
+        - ros-noetic-rostest
       run:
         - python {{ python }}
-        - ros-noetic-message-runtime
-        - ros-noetic-std-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-octomap
-    version: 1.9.5
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - cmake
-        - python {{ python }}
-      run:
-        - python {{ python }}
+        - ros-noetic-roslaunch
     script: bld_catkin.bat
 
 about:
