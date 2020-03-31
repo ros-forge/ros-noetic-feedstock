@@ -40,8 +40,9 @@ packages_skip_by_deps:
   - move_base_msgs
   - resource_retriever
   - urdf
+  - xacro
 
 packages_select_by_deps:
-  - xacro
+  - control_toolbox
 
 patch_dir: patch

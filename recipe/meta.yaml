@@ -1,19 +1,101 @@
 package:
   name: ros
-  version: 2020.03.30
+  version: 2020.03.31
 
 source:
-  - git_url: https://github.com/ros-gbp/xacro-release.git
-    git_rev: release/noetic/xacro/1.14.1-1
-    folder: ros-noetic-xacro/src/work
+  - git_url: https://github.com/ros-gbp/control_msgs-release.git
+    git_rev: release/noetic/control_msgs/1.5.2-1
+    folder: ros-noetic-control-msgs/src/work
+  - git_url: https://github.com/ros-gbp/dynamic_reconfigure-release.git
+    git_rev: release/noetic/dynamic_reconfigure/1.7.0-1
+    folder: ros-noetic-dynamic-reconfigure/src/work
+  - git_url: https://github.com/ros-gbp/realtime_tools-release.git
+    git_rev: release/noetic/realtime_tools/1.16.0-1
+    folder: ros-noetic-realtime-tools/src/work
+  - git_url: https://github.com/ros-gbp/control_toolbox-release.git
+    git_rev: release/noetic/control_toolbox/1.18.0-1
+    folder: ros-noetic-control-toolbox/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-xacro
-    version: 1.14.1
+  - name: ros-noetic-control-msgs
+    version: 1.5.2
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-actionlib-msgs
+        - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-generation
+        - ros-noetic-message-runtime
+        - ros-noetic-std-msgs
+        - ros-noetic-trajectory-msgs
+      run:
+        - python {{ python }}
+        - ros-noetic-actionlib-msgs
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-runtime
+        - ros-noetic-std-msgs
+        - ros-noetic-trajectory-msgs
+    script: bld_catkin.bat
+  - name: ros-noetic-dynamic-reconfigure
+    version: 1.7.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - boost
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-cpp-common
+        - ros-noetic-message-generation
+        - ros-noetic-roscpp
+        - ros-noetic-roscpp-serialization
+        - ros-noetic-rostest
+        - ros-noetic-std-msgs
+      run:
+        - boost
+        - python {{ python }}
+        - ros-noetic-message-runtime
+        - ros-noetic-roscpp
+        - ros-noetic-roslib
+        - ros-noetic-rospy
+        - ros-noetic-rosservice
+        - ros-noetic-std-msgs
+    script: bld_catkin.bat
+  - name: ros-noetic-realtime-tools
+    version: 1.16.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-actionlib
+        - ros-noetic-catkin
+        - ros-noetic-roscpp
+        - ros-noetic-rostest
+        - ros-noetic-rosunit
+      run:
+        - python {{ python }}
+        - ros-noetic-actionlib
+        - ros-noetic-roscpp
+    script: bld_catkin.bat
+  - name: ros-noetic-control-toolbox
+    version: 1.18.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -23,12 +105,24 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-roslaunch
-        - ros-noetic-roslint
-        - ros-noetic-rostest
+        - ros-noetic-cmake-modules
+        - ros-noetic-control-msgs
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-message-generation
+        - ros-noetic-realtime-tools
+        - ros-noetic-roscpp
+        - ros-noetic-rosunit
+        - ros-noetic-std-msgs
+        - tinyxml
       run:
         - python {{ python }}
-        - ros-noetic-roslaunch
+        - ros-noetic-control-msgs
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-message-runtime
+        - ros-noetic-realtime-tools
+        - ros-noetic-roscpp
+        - ros-noetic-std-msgs
+        - tinyxml
     script: bld_catkin.bat
 
 about:
