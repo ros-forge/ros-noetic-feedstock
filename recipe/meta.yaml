@@ -1,28 +1,40 @@
 package:
   name: ros
-  version: 2020.03.31
+  version: 2020.04.01
 
 source:
-  - git_url: https://github.com/ros-gbp/control_msgs-release.git
-    git_rev: release/noetic/control_msgs/1.5.2-1
-    folder: ros-noetic-control-msgs/src/work
-  - git_url: https://github.com/ros-gbp/dynamic_reconfigure-release.git
-    git_rev: release/noetic/dynamic_reconfigure/1.7.0-1
-    folder: ros-noetic-dynamic-reconfigure/src/work
-  - git_url: https://github.com/ros-gbp/realtime_tools-release.git
-    git_rev: release/noetic/realtime_tools/1.16.0-1
-    folder: ros-noetic-realtime-tools/src/work
-  - git_url: https://github.com/ros-gbp/control_toolbox-release.git
-    git_rev: release/noetic/control_toolbox/1.18.0-1
-    folder: ros-noetic-control-toolbox/src/work
+  - git_url: https://github.com/ros-gbp/diagnostics-release.git
+    git_rev: release/noetic/self_test/1.9.4-1
+    folder: ros-noetic-self-test/src/work
+  - git_url: https://github.com/ros-gbp/diagnostics-release.git
+    git_rev: release/noetic/diagnostics/1.9.4-1
+    folder: ros-noetic-diagnostics/src/work
+  - git_url: https://github.com/ros-gbp/bond_core-release.git
+    git_rev: release/noetic/bondpy/1.8.4-1
+    folder: ros-noetic-bondpy/src/work
+  - git_url: https://github.com/ros-gbp/diagnostics-release.git
+    git_rev: release/noetic/diagnostic_aggregator/1.9.4-1
+    folder: ros-noetic-diagnostic-aggregator/src/work
+  - git_url: https://github.com/ros-gbp/urdfdom_py-release.git
+    git_rev: release/noetic/urdfdom_py/0.4.3-1
+    folder: ros-noetic-urdfdom-py/src/work
+  - git_url: https://github.com/ros-gbp/diagnostics-release.git
+    git_rev: release/noetic/diagnostic_updater/1.9.4-1
+    folder: ros-noetic-diagnostic-updater/src/work
+  - git_url: https://github.com/ros-gbp/diagnostics-release.git
+    git_rev: release/noetic/diagnostic_common_diagnostics/1.9.4-1
+    folder: ros-noetic-diagnostic-common-diagnostics/src/work
+  - git_url: https://github.com/ros-gbp/diagnostics-release.git
+    git_rev: release/noetic/diagnostic_analysis/1.9.4-1
+    folder: ros-noetic-diagnostic-analysis/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-control-msgs
-    version: 1.5.2
+  - name: ros-noetic-self-test
+    version: 1.9.4
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -31,51 +43,62 @@ outputs:
         - cmake
       host:
         - python {{ python }}
-        - ros-noetic-actionlib-msgs
         - ros-noetic-catkin
-        - ros-noetic-geometry-msgs
-        - ros-noetic-message-generation
-        - ros-noetic-message-runtime
-        - ros-noetic-std-msgs
-        - ros-noetic-trajectory-msgs
-      run:
-        - python {{ python }}
-        - ros-noetic-actionlib-msgs
-        - ros-noetic-geometry-msgs
-        - ros-noetic-message-runtime
-        - ros-noetic-std-msgs
-        - ros-noetic-trajectory-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-dynamic-reconfigure
-    version: 1.7.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - boost
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-cpp-common
-        - ros-noetic-message-generation
+        - ros-noetic-diagnostic-msgs
+        - ros-noetic-diagnostic-updater
         - ros-noetic-roscpp
-        - ros-noetic-roscpp-serialization
         - ros-noetic-rostest
-        - ros-noetic-std-msgs
       run:
-        - boost
         - python {{ python }}
-        - ros-noetic-message-runtime
+        - ros-noetic-diagnostic-msgs
+        - ros-noetic-diagnostic-updater
         - ros-noetic-roscpp
-        - ros-noetic-roslib
+    script: bld_catkin.bat
+  - name: ros-noetic-diagnostics
+    version: 1.9.4
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-diagnostic-aggregator
+        - ros-noetic-diagnostic-analysis
+        - ros-noetic-diagnostic-common-diagnostics
+        - ros-noetic-diagnostic-updater
+        - ros-noetic-self-test
+      run:
+        - python {{ python }}
+        - ros-noetic-diagnostic-aggregator
+        - ros-noetic-diagnostic-analysis
+        - ros-noetic-diagnostic-common-diagnostics
+        - ros-noetic-diagnostic-updater
+        - ros-noetic-self-test
+    script: bld_catkin.bat
+  - name: ros-noetic-bondpy
+    version: 1.8.4
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-bond
+        - ros-noetic-catkin
         - ros-noetic-rospy
-        - ros-noetic-rosservice
-        - ros-noetic-std-msgs
+        - ros-noetic-smclib
+      run:
+        - python {{ python }}
+        - ros-noetic-rospy
+        - ros-noetic-smclib
     script: bld_catkin.bat
-  - name: ros-noetic-realtime-tools
-    version: 1.16.0
+  - name: ros-noetic-diagnostic-aggregator
+    version: 1.9.4
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -84,18 +107,89 @@ outputs:
         - cmake
       host:
         - python {{ python }}
-        - ros-noetic-actionlib
+        - ros-noetic-bondcpp
+        - ros-noetic-bondpy
         - ros-noetic-catkin
+        - ros-noetic-diagnostic-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-rostest
+        - ros-noetic-xmlrpcpp
+      run:
+        - python {{ python }}
+        - ros-noetic-bondcpp
+        - ros-noetic-bondpy
+        - ros-noetic-diagnostic-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-xmlrpcpp
+    script: bld_catkin.bat
+  - name: ros-noetic-urdfdom-py
+    version: 0.4.3
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - mock
+        - python {{ python }}
+        - ros-noetic-catkin
+        - setuptools
+      run:
+        - python {{ python }}
+        - pyyaml
+        - ros-noetic-rospy
+    script: bld_catkin.bat
+  - name: ros-noetic-diagnostic-updater
+    version: 1.9.4
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-diagnostic-msgs
         - ros-noetic-roscpp
         - ros-noetic-rostest
-        - ros-noetic-rosunit
+        - ros-noetic-std-msgs
       run:
         - python {{ python }}
-        - ros-noetic-actionlib
+        - ros-noetic-diagnostic-msgs
         - ros-noetic-roscpp
+        - ros-noetic-std-msgs
     script: bld_catkin.bat
-  - name: ros-noetic-control-toolbox
-    version: 1.18.0
+  - name: ros-noetic-diagnostic-common-diagnostics
+    version: 1.9.4
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - psutil
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-diagnostic-updater
+        - ros-noetic-rospy
+        - ros-noetic-rostest
+        - ros-noetic-tf
+      run:
+        - psutil
+        - python {{ python }}
+        - ros-noetic-diagnostic-updater
+        - ros-noetic-rospy
+        - ros-noetic-tf
+    script: bld_catkin.bat
+  - name: ros-noetic-diagnostic-analysis
+    version: 1.9.4
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -105,24 +199,15 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-cmake-modules
-        - ros-noetic-control-msgs
-        - ros-noetic-dynamic-reconfigure
-        - ros-noetic-message-generation
-        - ros-noetic-realtime-tools
-        - ros-noetic-roscpp
-        - ros-noetic-rosunit
-        - ros-noetic-std-msgs
-        - tinyxml
+        - ros-noetic-diagnostic-msgs
+        - ros-noetic-rosbag
+        - ros-noetic-roslib
+        - ros-noetic-rostest
       run:
         - python {{ python }}
-        - ros-noetic-control-msgs
-        - ros-noetic-dynamic-reconfigure
-        - ros-noetic-message-runtime
-        - ros-noetic-realtime-tools
-        - ros-noetic-roscpp
-        - ros-noetic-std-msgs
-        - tinyxml
+        - ros-noetic-diagnostic-msgs
+        - ros-noetic-rosbag
+        - ros-noetic-roslib
     script: bld_catkin.bat
 
 about:

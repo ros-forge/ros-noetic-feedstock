@@ -41,8 +41,10 @@ packages_skip_by_deps:
   - resource_retriever
   - urdf
   - xacro
+  - control_toolbox
 
 packages_select_by_deps:
-  - control_toolbox
+  - diagnostics
+  - urdfdom_py
 
 patch_dir: patch
