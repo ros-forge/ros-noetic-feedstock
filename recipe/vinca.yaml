@@ -42,9 +42,10 @@ packages_skip_by_deps:
   - urdf
   - xacro
   - control_toolbox
-
-packages_select_by_deps:
   - diagnostics
   - urdfdom_py
+
+packages_select_by_deps:
+  - navigation
 
 patch_dir: patch

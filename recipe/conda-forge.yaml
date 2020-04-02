@@ -244,3 +244,5 @@ python3-qt5-bindings-webkit:
   win64: []
 python3-cairo:
   win64: [pycairo]
+yaml-cpp:
+  win64: [yaml-cpp]

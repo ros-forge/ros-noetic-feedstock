@@ -1,40 +1,99 @@
 package:
   name: ros
-  version: 2020.04.01
+  version: 2020.04.02
 
 source:
-  - git_url: https://github.com/ros-gbp/diagnostics-release.git
-    git_rev: release/noetic/self_test/1.9.4-1
-    folder: ros-noetic-self-test/src/work
-  - git_url: https://github.com/ros-gbp/diagnostics-release.git
-    git_rev: release/noetic/diagnostics/1.9.4-1
-    folder: ros-noetic-diagnostics/src/work
-  - git_url: https://github.com/ros-gbp/bond_core-release.git
-    git_rev: release/noetic/bondpy/1.8.4-1
-    folder: ros-noetic-bondpy/src/work
-  - git_url: https://github.com/ros-gbp/diagnostics-release.git
-    git_rev: release/noetic/diagnostic_aggregator/1.9.4-1
-    folder: ros-noetic-diagnostic-aggregator/src/work
-  - git_url: https://github.com/ros-gbp/urdfdom_py-release.git
-    git_rev: release/noetic/urdfdom_py/0.4.3-1
-    folder: ros-noetic-urdfdom-py/src/work
-  - git_url: https://github.com/ros-gbp/diagnostics-release.git
-    git_rev: release/noetic/diagnostic_updater/1.9.4-1
-    folder: ros-noetic-diagnostic-updater/src/work
-  - git_url: https://github.com/ros-gbp/diagnostics-release.git
-    git_rev: release/noetic/diagnostic_common_diagnostics/1.9.4-1
-    folder: ros-noetic-diagnostic-common-diagnostics/src/work
-  - git_url: https://github.com/ros-gbp/diagnostics-release.git
-    git_rev: release/noetic/diagnostic_analysis/1.9.4-1
-    folder: ros-noetic-diagnostic-analysis/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/rotate_recovery/1.17.0-1
+    folder: ros-noetic-rotate-recovery/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/navfn/1.17.0-1
+    folder: ros-noetic-navfn/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/costmap_2d/1.17.0-1
+    folder: ros-noetic-costmap-2d/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/move_base/1.17.0-1
+    folder: ros-noetic-move-base/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/amcl/1.17.0-1
+    folder: ros-noetic-amcl/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/navigation/1.17.0-1
+    folder: ros-noetic-navigation/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/voxel_grid/1.17.0-1
+    folder: ros-noetic-voxel-grid/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/dwa_local_planner/1.17.0-1
+    folder: ros-noetic-dwa-local-planner/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/base_local_planner/1.17.0-1
+    folder: ros-noetic-base-local-planner/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/move_slow_and_clear/1.17.0-1
+    folder: ros-noetic-move-slow-and-clear/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/fake_localization/1.17.0-1
+    folder: ros-noetic-fake-localization/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/carrot_planner/1.17.0-1
+    folder: ros-noetic-carrot-planner/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/clear_costmap_recovery/1.17.0-1
+    folder: ros-noetic-clear-costmap-recovery/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/global_planner/1.17.0-1
+    folder: ros-noetic-global-planner/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/nav_core/1.17.0-1
+    folder: ros-noetic-nav-core/src/work
+  - git_url: https://github.com/ros-gbp/navigation-release.git
+    git_rev: release/noetic/map_server/1.17.0-1
+    folder: ros-noetic-map-server/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-self-test
-    version: 1.9.4
+  - name: ros-noetic-rotate-recovery
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-angles
+        - ros-noetic-base-local-planner
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-costmap-2d
+        - ros-noetic-geometry-msgs
+        - ros-noetic-nav-core
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-tf2
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+      run:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-costmap-2d
+        - ros-noetic-geometry-msgs
+        - ros-noetic-nav-core
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-tf2
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-navfn
+    version: 1.17.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -44,18 +103,88 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-diagnostic-msgs
-        - ros-noetic-diagnostic-updater
+        - ros-noetic-cmake-modules
+        - ros-noetic-costmap-2d
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-generation
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-rosunit
+        - ros-noetic-sensor-msgs
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
+      run:
+        - python {{ python }}
+        - ros-noetic-costmap-2d
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-runtime
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-sensor-msgs
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
+    script: bld_catkin.bat
+  - name: ros-noetic-costmap-2d
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-laser-geometry
+        - ros-noetic-map-msgs
+        - ros-noetic-map-server
+        - ros-noetic-message-filters
+        - ros-noetic-message-generation
+        - ros-noetic-nav-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-rosbag
         - ros-noetic-roscpp
         - ros-noetic-rostest
+        - ros-noetic-rosunit
+        - ros-noetic-sensor-msgs
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+        - ros-noetic-tf2-sensor-msgs
+        - ros-noetic-visualization-msgs
+        - ros-noetic-voxel-grid
       run:
         - python {{ python }}
-        - ros-noetic-diagnostic-msgs
-        - ros-noetic-diagnostic-updater
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-laser-geometry
+        - ros-noetic-map-msgs
+        - ros-noetic-message-filters
+        - ros-noetic-message-runtime
+        - ros-noetic-nav-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-rosconsole
         - ros-noetic-roscpp
+        - ros-noetic-rostest
+        - ros-noetic-sensor-msgs
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
+        - ros-noetic-voxel-grid
     script: bld_catkin.bat
-  - name: ros-noetic-diagnostics
-    version: 1.9.4
+  - name: ros-noetic-move-base
+    version: 1.17.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -64,88 +193,50 @@ outputs:
         - cmake
       host:
         - python {{ python }}
+        - ros-noetic-actionlib
+        - ros-noetic-base-local-planner
         - ros-noetic-catkin
-        - ros-noetic-diagnostic-aggregator
-        - ros-noetic-diagnostic-analysis
-        - ros-noetic-diagnostic-common-diagnostics
-        - ros-noetic-diagnostic-updater
-        - ros-noetic-self-test
-      run:
-        - python {{ python }}
-        - ros-noetic-diagnostic-aggregator
-        - ros-noetic-diagnostic-analysis
-        - ros-noetic-diagnostic-common-diagnostics
-        - ros-noetic-diagnostic-updater
-        - ros-noetic-self-test
-    script: bld_catkin.bat
-  - name: ros-noetic-bondpy
-    version: 1.8.4
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-bond
-        - ros-noetic-catkin
-        - ros-noetic-rospy
-        - ros-noetic-smclib
-      run:
-        - python {{ python }}
-        - ros-noetic-rospy
-        - ros-noetic-smclib
-    script: bld_catkin.bat
-  - name: ros-noetic-diagnostic-aggregator
-    version: 1.9.4
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-bondcpp
-        - ros-noetic-bondpy
-        - ros-noetic-catkin
-        - ros-noetic-diagnostic-msgs
+        - ros-noetic-clear-costmap-recovery
+        - ros-noetic-cmake-modules
+        - ros-noetic-costmap-2d
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-generation
+        - ros-noetic-move-base-msgs
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-navfn
         - ros-noetic-pluginlib
         - ros-noetic-roscpp
         - ros-noetic-rospy
-        - ros-noetic-rostest
-        - ros-noetic-xmlrpcpp
+        - ros-noetic-rotate-recovery
+        - ros-noetic-std-srvs
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
       run:
         - python {{ python }}
-        - ros-noetic-bondcpp
-        - ros-noetic-bondpy
-        - ros-noetic-diagnostic-msgs
+        - ros-noetic-actionlib
+        - ros-noetic-base-local-planner
+        - ros-noetic-clear-costmap-recovery
+        - ros-noetic-costmap-2d
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-runtime
+        - ros-noetic-move-base-msgs
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-navfn
         - ros-noetic-pluginlib
         - ros-noetic-roscpp
         - ros-noetic-rospy
-        - ros-noetic-xmlrpcpp
+        - ros-noetic-rotate-recovery
+        - ros-noetic-std-srvs
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
     script: bld_catkin.bat
-  - name: ros-noetic-urdfdom-py
-    version: 0.4.3
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - mock
-        - python {{ python }}
-        - ros-noetic-catkin
-        - setuptools
-      run:
-        - python {{ python }}
-        - pyyaml
-        - ros-noetic-rospy
-    script: bld_catkin.bat
-  - name: ros-noetic-diagnostic-updater
-    version: 1.9.4
+  - name: ros-noetic-amcl
+    version: 1.17.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -154,42 +245,39 @@ outputs:
         - cmake
       host:
         - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-diagnostic-msgs
-        - ros-noetic-roscpp
-        - ros-noetic-rostest
-        - ros-noetic-std-msgs
-      run:
-        - python {{ python }}
-        - ros-noetic-diagnostic-msgs
-        - ros-noetic-roscpp
-        - ros-noetic-std-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-diagnostic-common-diagnostics
-    version: 1.9.4
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - psutil
-        - python {{ python }}
+        - python-orocos-kdl
         - ros-noetic-catkin
         - ros-noetic-diagnostic-updater
-        - ros-noetic-rospy
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-map-server
+        - ros-noetic-message-filters
+        - ros-noetic-nav-msgs
+        - ros-noetic-rosbag
+        - ros-noetic-roscpp
         - ros-noetic-rostest
-        - ros-noetic-tf
+        - ros-noetic-sensor-msgs
+        - ros-noetic-std-srvs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-msgs
+        - ros-noetic-tf2-ros
       run:
-        - psutil
         - python {{ python }}
         - ros-noetic-diagnostic-updater
-        - ros-noetic-rospy
-        - ros-noetic-tf
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-nav-msgs
+        - ros-noetic-rosbag
+        - ros-noetic-roscpp
+        - ros-noetic-sensor-msgs
+        - ros-noetic-std-srvs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-msgs
+        - ros-noetic-tf2-ros
     script: bld_catkin.bat
-  - name: ros-noetic-diagnostic-analysis
-    version: 1.9.4
+  - name: ros-noetic-navigation
+    version: 1.17.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -199,15 +287,335 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-diagnostic-msgs
-        - ros-noetic-rosbag
-        - ros-noetic-roslib
-        - ros-noetic-rostest
       run:
         - python {{ python }}
-        - ros-noetic-diagnostic-msgs
-        - ros-noetic-rosbag
-        - ros-noetic-roslib
+        - ros-noetic-amcl
+        - ros-noetic-base-local-planner
+        - ros-noetic-carrot-planner
+        - ros-noetic-clear-costmap-recovery
+        - ros-noetic-costmap-2d
+        - ros-noetic-dwa-local-planner
+        - ros-noetic-fake-localization
+        - ros-noetic-global-planner
+        - ros-noetic-map-server
+        - ros-noetic-move-base
+        - ros-noetic-move-base-msgs
+        - ros-noetic-move-slow-and-clear
+        - ros-noetic-nav-core
+        - ros-noetic-navfn
+        - ros-noetic-rotate-recovery
+        - ros-noetic-voxel-grid
+    script: bld_catkin.bat
+  - name: ros-noetic-voxel-grid
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-roscpp
+        - ros-noetic-rosunit
+      run:
+        - python {{ python }}
+        - ros-noetic-roscpp
+    script: bld_catkin.bat
+  - name: ros-noetic-dwa-local-planner
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-angles
+        - ros-noetic-base-local-planner
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-costmap-2d
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-sensor-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+      run:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-base-local-planner
+        - ros-noetic-costmap-2d
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-sensor-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-base-local-planner
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-angles
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-costmap-2d
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-generation
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-rosunit
+        - ros-noetic-sensor-msgs
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
+        - ros-noetic-voxel-grid
+      run:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-angles
+        - ros-noetic-costmap-2d
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-runtime
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-pluginlib
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-sensor-msgs
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
+        - ros-noetic-voxel-grid
+    script: bld_catkin.bat
+  - name: ros-noetic-move-slow-and-clear
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-costmap-2d
+        - ros-noetic-geometry-msgs
+        - ros-noetic-nav-core
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+      run:
+        - python {{ python }}
+        - ros-noetic-costmap-2d
+        - ros-noetic-geometry-msgs
+        - ros-noetic-nav-core
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+    script: bld_catkin.bat
+  - name: ros-noetic-fake-localization
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-angles
+        - ros-noetic-catkin
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-filters
+        - ros-noetic-nav-msgs
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+      run:
+        - python {{ python }}
+        - ros-noetic-geometry-msgs
+        - ros-noetic-message-filters
+        - ros-noetic-nav-msgs
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-carrot-planner
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-base-local-planner
+        - ros-noetic-catkin
+        - ros-noetic-costmap-2d
+        - ros-noetic-nav-core
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-tf2
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+      run:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-base-local-planner
+        - ros-noetic-costmap-2d
+        - ros-noetic-nav-core
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-tf2
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-clear-costmap-recovery
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-costmap-2d
+        - ros-noetic-nav-core
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-rostest
+        - ros-noetic-tf2-ros
+      run:
+        - eigen
+        - python {{ python }}
+        - ros-noetic-costmap-2d
+        - ros-noetic-nav-core
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-global-planner
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-angles
+        - ros-noetic-catkin
+        - ros-noetic-costmap-2d
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-navfn
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+      run:
+        - python {{ python }}
+        - ros-noetic-costmap-2d
+        - ros-noetic-dynamic-reconfigure
+        - ros-noetic-geometry-msgs
+        - ros-noetic-nav-core
+        - ros-noetic-nav-msgs
+        - ros-noetic-navfn
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-nav-core
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-costmap-2d
+        - ros-noetic-geometry-msgs
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2-ros
+      run:
+        - python {{ python }}
+        - ros-noetic-costmap-2d
+        - ros-noetic-geometry-msgs
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2-ros
+    script: bld_catkin.bat
+  - name: ros-noetic-map-server
+    version: 1.17.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - bullet
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-nav-msgs
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-rostest
+        - ros-noetic-rosunit
+        - ros-noetic-tf2
+        - sdl2
+        - sdl2_image
+        - yaml-cpp
+      run:
+        - bullet
+        - python {{ python }}
+        - ros-noetic-nav-msgs
+        - ros-noetic-roscpp
+        - ros-noetic-tf2
+        - sdl2
+        - sdl2_image
+        - yaml-cpp
     script: bld_catkin.bat
 
 about:
