@@ -30,6 +30,8 @@ source:
   - git_url: https://github.com/ros-gbp/navigation-release.git
     git_rev: release/noetic/map_server/1.17.0-1
     folder: ros-noetic-map-server/src/work
+    patches:
+      - patch/ros-noetic-map-server.patch
   - git_url: https://github.com/ros-gbp/navigation-release.git
     git_rev: release/noetic/move_base/1.17.0-1
     folder: ros-noetic-move-base/src/work
