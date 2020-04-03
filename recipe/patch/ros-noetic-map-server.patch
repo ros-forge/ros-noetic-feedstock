@@ -9,7 +9,7 @@ index 220b2d0a27..38db30df47 100644
 -pkg_check_modules(YAMLCPP yaml-cpp REQUIRED)
 +pkg_check_modules(YAMLCPP yaml-cpp QUIET)
 +if(NOT YAMLCPP_FOUND)
-+  find_package(YAMLCPP 0.6 REQUIRED NAMES yaml-cpp)
++  find_package(yaml-cpp 0.6 REQUIRED)
 +  set(YAMLCPP_INCLUDE_DIRS ${YAML_CPP_INCLUDE_DIR})
 +  set(YAMLCPP_LIBRARIES ${YAML_CPP_LIBRARIES})
 +endif()
