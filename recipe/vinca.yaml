@@ -2,7 +2,7 @@ ros_distro: noetic
 
 # mapping for package keys
 conda_index:
-  - conda-forge.yaml
+  - 'https://raw.githubusercontent.com/ros-forge/rosdep-conda-forge/master/rosdep/conda-forge.yaml'
 
 packages_skip_by_deps:
   - ros_comm
@@ -44,8 +44,10 @@ packages_skip_by_deps:
   - control_toolbox
   - diagnostics
   - urdfdom_py
+  - navigation
 
 packages_select_by_deps:
-  - navigation
+  - perception_pcl
+  - image_common
 
 patch_dir: patch
