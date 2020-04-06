@@ -45,9 +45,11 @@ packages_skip_by_deps:
   - diagnostics
   - urdfdom_py
   - navigation
-
-packages_select_by_deps:
   - perception_pcl
   - image_common
+
+packages_select_by_deps:
+  - bond_core
+  - nodelet_core
 
 patch_dir: patch

@@ -1,124 +1,22 @@
 package:
   name: ros
-  version: 2020.04.03
+  version: 2020.04.05
 
 source:
-  - git_url: https://github.com/ros-gbp/image_common-release.git
-    git_rev: release/noetic/camera_calibration_parsers/1.12.0-1
-    folder: ros-noetic-camera-calibration-parsers/src/work
-  - git_url: https://github.com/ros-gbp/image_common-release.git
-    git_rev: release/noetic/camera_info_manager/1.12.0-1
-    folder: ros-noetic-camera-info-manager/src/work
-  - git_url: https://github.com/ros-gbp/image_common-release.git
-    git_rev: release/noetic/image_common/1.12.0-1
-    folder: ros-noetic-image-common/src/work
-  - git_url: https://github.com/ros-gbp/image_common-release.git
-    git_rev: release/noetic/image_transport/1.12.0-1
-    folder: ros-noetic-image-transport/src/work
+  - git_url: https://github.com/ros-gbp/bond_core-release.git
+    git_rev: release/noetic/bond_core/1.8.4-1
+    folder: ros-noetic-bond-core/src/work
   - git_url: https://github.com/ros-gbp/nodelet_core-release.git
-    git_rev: release/noetic/nodelet_topic_tools/1.10.0-1
-    folder: ros-noetic-nodelet-topic-tools/src/work
-  - git_url: https://github.com/ros-gbp/perception_pcl-release.git
-    git_rev: release/noetic/pcl_conversions/1.7.1-1
-    folder: ros-noetic-pcl-conversions/src/work
-  - git_url: https://github.com/ros-gbp/pcl_msgs-release.git
-    git_rev: release/noetic/pcl_msgs/0.3.0-1
-    folder: ros-noetic-pcl-msgs/src/work
-  - git_url: https://github.com/ros-gbp/perception_pcl-release.git
-    git_rev: release/noetic/pcl_ros/1.7.1-1
-    folder: ros-noetic-pcl-ros/src/work
-  - git_url: https://github.com/ros-gbp/perception_pcl-release.git
-    git_rev: release/noetic/perception_pcl/1.7.1-1
-    folder: ros-noetic-perception-pcl/src/work
-  - git_url: https://github.com/ros-gbp/image_common-release.git
-    git_rev: release/noetic/polled_camera/1.12.0-1
-    folder: ros-noetic-polled-camera/src/work
+    git_rev: release/noetic/nodelet_core/1.10.0-1
+    folder: ros-noetic-nodelet-core/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-camera-calibration-parsers
-    version: 1.12.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - boost
-        - pkg-config
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-rosbash
-        - ros-noetic-rosconsole
-        - ros-noetic-roscpp
-        - ros-noetic-roscpp-serialization
-        - ros-noetic-rosunit
-        - ros-noetic-sensor-msgs
-        - yaml-cpp
-      run:
-        - boost
-        - python {{ python }}
-        - ros-noetic-roscpp
-        - ros-noetic-roscpp-serialization
-        - ros-noetic-sensor-msgs
-        - yaml-cpp
-    script: bld_catkin.bat
-  - name: ros-noetic-camera-info-manager
-    version: 1.12.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - boost
-        - gtest
-        - python {{ python }}
-        - ros-noetic-camera-calibration-parsers
-        - ros-noetic-catkin
-        - ros-noetic-image-transport
-        - ros-noetic-roscpp
-        - ros-noetic-roslib
-        - ros-noetic-rostest
-        - ros-noetic-sensor-msgs
-      run:
-        - boost
-        - python {{ python }}
-        - ros-noetic-camera-calibration-parsers
-        - ros-noetic-image-transport
-        - ros-noetic-roscpp
-        - ros-noetic-roslib
-        - ros-noetic-sensor-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-image-common
-    version: 1.12.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-camera-calibration-parsers
-        - ros-noetic-camera-info-manager
-        - ros-noetic-catkin
-        - ros-noetic-image-transport
-        - ros-noetic-polled-camera
-      run:
-        - python {{ python }}
-        - ros-noetic-camera-calibration-parsers
-        - ros-noetic-camera-info-manager
-        - ros-noetic-image-transport
-        - ros-noetic-polled-camera
-    script: bld_catkin.bat
-  - name: ros-noetic-image-transport
-    version: 1.12.0
+  - name: ros-noetic-bond-core
+    version: 1.8.4
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -128,22 +26,14 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-message-filters
-        - ros-noetic-pluginlib
-        - ros-noetic-rosconsole
-        - ros-noetic-roscpp
-        - ros-noetic-roslib
-        - ros-noetic-sensor-msgs
       run:
         - python {{ python }}
-        - ros-noetic-message-filters
-        - ros-noetic-pluginlib
-        - ros-noetic-rosconsole
-        - ros-noetic-roscpp
-        - ros-noetic-roslib
-        - ros-noetic-sensor-msgs
+        - ros-noetic-bond
+        - ros-noetic-bondcpp
+        - ros-noetic-bondpy
+        - ros-noetic-smclib
     script: bld_catkin.bat
-  - name: ros-noetic-nodelet-topic-tools
+  - name: ros-noetic-nodelet-core
     version: 1.10.0
     requirements:
       build:
@@ -152,165 +42,12 @@ outputs:
         - ninja
         - cmake
       host:
-        - boost
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-dynamic-reconfigure
-        - ros-noetic-message-filters
-        - ros-noetic-nodelet
-        - ros-noetic-pluginlib
-        - ros-noetic-roscpp
-      run:
-        - boost
-        - python {{ python }}
-        - ros-noetic-dynamic-reconfigure
-        - ros-noetic-message-filters
-        - ros-noetic-nodelet
-        - ros-noetic-pluginlib
-        - ros-noetic-roscpp
-    script: bld_catkin.bat
-  - name: ros-noetic-pcl-conversions
-    version: 1.7.1
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - eigen
-        - pcl
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-pcl-msgs
-        - ros-noetic-roscpp
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
-      run:
-        - eigen
-        - pcl
-        - python {{ python }}
-        - ros-noetic-pcl-msgs
-        - ros-noetic-roscpp
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-pcl-msgs
-    version: 0.3.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-message-generation
-        - ros-noetic-message-runtime
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
       run:
         - python {{ python }}
-        - ros-noetic-message-runtime
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
-    script: bld_catkin.bat
-  - name: ros-noetic-pcl-ros
-    version: 1.7.1
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - eigen
-        - pcl
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-cmake-modules
-        - ros-noetic-dynamic-reconfigure
-        - ros-noetic-geometry-msgs
-        - ros-noetic-message-filters
         - ros-noetic-nodelet
         - ros-noetic-nodelet-topic-tools
-        - ros-noetic-pcl-conversions
-        - ros-noetic-pcl-msgs
-        - ros-noetic-pluginlib
-        - ros-noetic-rosbag
-        - ros-noetic-rosconsole
-        - ros-noetic-roscpp
-        - ros-noetic-roslib
-        - ros-noetic-rostest
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
-        - ros-noetic-tf
-        - ros-noetic-tf2
-        - ros-noetic-tf2-eigen
-        - ros-noetic-tf2-ros
-      run:
-        - eigen
-        - pcl
-        - python {{ python }}
-        - ros-noetic-dynamic-reconfigure
-        - ros-noetic-geometry-msgs
-        - ros-noetic-message-filters
-        - ros-noetic-nodelet
-        - ros-noetic-nodelet-topic-tools
-        - ros-noetic-pcl-conversions
-        - ros-noetic-pcl-msgs
-        - ros-noetic-pluginlib
-        - ros-noetic-rosbag
-        - ros-noetic-roscpp
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
-        - ros-noetic-tf
-        - ros-noetic-tf2
-        - ros-noetic-tf2-eigen
-        - ros-noetic-tf2-ros
-    script: bld_catkin.bat
-  - name: ros-noetic-perception-pcl
-    version: 1.7.1
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-pcl-conversions
-        - ros-noetic-pcl-msgs
-        - ros-noetic-pcl-ros
-    script: bld_catkin.bat
-  - name: ros-noetic-polled-camera
-    version: 1.12.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-        - ros-noetic-image-transport
-        - ros-noetic-message-generation
-        - ros-noetic-message-runtime
-        - ros-noetic-roscpp
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
-      run:
-        - python {{ python }}
-        - ros-noetic-image-transport
-        - ros-noetic-message-runtime
-        - ros-noetic-roscpp
-        - ros-noetic-sensor-msgs
-        - ros-noetic-std-msgs
     script: bld_catkin.bat
 
 about:
@@ -321,4 +58,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - seanyen
+    - ros-forge
