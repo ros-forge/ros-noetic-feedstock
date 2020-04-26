@@ -3,19 +3,38 @@ package:
   version: 2020.04.26
 
 source:
-  - git_url: https://github.com/ros-gbp/geometry2-release.git
-    git_rev: release/noetic/tf2/0.7.0-1
-    folder: ros-noetic-tf2/src/work
-    patches:
-      - patch/ros-noetic-tf2.patch
+  - git_url: https://github.com/ros-gbp/ros_control-release.git
+    git_rev: release/noetic/combined_robot_hw/0.19.0-1
+    folder: ros-noetic-combined-robot-hw/src/work
+  - git_url: https://github.com/ros-gbp/ros_control-release.git
+    git_rev: release/noetic/controller_interface/0.19.0-1
+    folder: ros-noetic-controller-interface/src/work
+  - git_url: https://github.com/ros-gbp/ros_control-release.git
+    git_rev: release/noetic/controller_manager/0.19.0-1
+    folder: ros-noetic-controller-manager/src/work
+  - git_url: https://github.com/ros-gbp/ros_control-release.git
+    git_rev: release/noetic/controller_manager_msgs/0.19.0-1
+    folder: ros-noetic-controller-manager-msgs/src/work
+  - git_url: https://github.com/ros-gbp/ros_control-release.git
+    git_rev: release/noetic/hardware_interface/0.19.0-1
+    folder: ros-noetic-hardware-interface/src/work
+  - git_url: https://github.com/ros-gbp/ros_control-release.git
+    git_rev: release/noetic/joint_limits_interface/0.19.0-1
+    folder: ros-noetic-joint-limits-interface/src/work
+  - git_url: https://github.com/ros-gbp/ros_control-release.git
+    git_rev: release/noetic/ros_control/0.19.0-1
+    folder: ros-noetic-ros-control/src/work
+  - git_url: https://github.com/ros-gbp/ros_control-release.git
+    git_rev: release/noetic/transmission_interface/0.19.0-1
+    folder: ros-noetic-transmission-interface/src/work
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-tf2
-    version: 0.7.0
+  - name: ros-noetic-combined-robot-hw
+    version: 0.19.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -23,18 +42,165 @@ outputs:
         - ninja
         - cmake
       host:
-        - console_bridge
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-geometry-msgs
-        - ros-noetic-rostime
-        - ros-noetic-tf2-msgs
+        - ros-noetic-hardware-interface
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
       run:
-        - console_bridge
         - python {{ python }}
-        - ros-noetic-geometry-msgs
-        - ros-noetic-rostime
-        - ros-noetic-tf2-msgs
+        - ros-noetic-hardware-interface
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+    script: bld_catkin.bat
+  - name: ros-noetic-controller-interface
+    version: 0.19.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-hardware-interface
+        - ros-noetic-roscpp
+      run:
+        - python {{ python }}
+        - ros-noetic-hardware-interface
+        - ros-noetic-roscpp
+    script: bld_catkin.bat
+  - name: ros-noetic-controller-manager
+    version: 0.19.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-controller-interface
+        - ros-noetic-controller-manager-msgs
+        - ros-noetic-hardware-interface
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-rostest
+      run:
+        - python {{ python }}
+        - ros-noetic-controller-interface
+        - ros-noetic-controller-manager-msgs
+        - ros-noetic-hardware-interface
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - ros-noetic-rosparam
+        - ros-noetic-rospy
+        - ros-noetic-std-msgs
+    script: bld_catkin.bat
+  - name: ros-noetic-controller-manager-msgs
+    version: 0.19.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-message-generation
+        - ros-noetic-std-msgs
+      run:
+        - python {{ python }}
+        - ros-noetic-message-runtime
+        - ros-noetic-rospy
+        - ros-noetic-rosservice
+        - ros-noetic-std-msgs
+    script: bld_catkin.bat
+  - name: ros-noetic-hardware-interface
+    version: 0.19.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-roscpp
+      run:
+        - python {{ python }}
+        - ros-noetic-roscpp
+    script: bld_catkin.bat
+  - name: ros-noetic-joint-limits-interface
+    version: 0.19.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-hardware-interface
+        - ros-noetic-roscpp
+        - ros-noetic-rostest
+        - ros-noetic-urdf
+      run:
+        - python {{ python }}
+        - ros-noetic-hardware-interface
+        - ros-noetic-roscpp
+        - ros-noetic-urdf
+    script: bld_catkin.bat
+  - name: ros-noetic-ros-control
+    version: 0.19.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+      run:
+        - python {{ python }}
+        - ros-noetic-combined-robot-hw
+        - ros-noetic-controller-interface
+        - ros-noetic-controller-manager
+        - ros-noetic-controller-manager-msgs
+        - ros-noetic-hardware-interface
+        - ros-noetic-joint-limits-interface
+        - ros-noetic-realtime-tools
+        - ros-noetic-transmission-interface
+    script: bld_catkin.bat
+  - name: ros-noetic-transmission-interface
+    version: 0.19.0
+    requirements:
+      build:
+        - "{{ compiler('cxx') }}"
+        - "{{ compiler('c') }}"
+        - ninja
+        - cmake
+      host:
+        - python {{ python }}
+        - ros-noetic-catkin
+        - ros-noetic-cmake-modules
+        - ros-noetic-hardware-interface
+        - ros-noetic-pluginlib
+        - ros-noetic-resource-retriever
+        - ros-noetic-roscpp
+        - tinyxml
+      run:
+        - python {{ python }}
+        - ros-noetic-hardware-interface
+        - ros-noetic-pluginlib
+        - ros-noetic-roscpp
+        - tinyxml
     script: bld_catkin.bat
 
 about:
