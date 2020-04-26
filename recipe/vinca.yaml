@@ -47,9 +47,10 @@ packages_skip_by_deps:
   - navigation
   - perception_pcl
   - image_common
-
-packages_select_by_deps:
   - bond_core
   - nodelet_core
+
+packages_select_by_deps:
+  - interactive_markers
 
 patch_dir: patch

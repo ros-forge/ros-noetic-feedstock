@@ -1,22 +1,19 @@
 package:
   name: ros
-  version: 2020.04.05
+  version: 2020.04.26
 
 source:
-  - git_url: https://github.com/ros-gbp/bond_core-release.git
-    git_rev: release/noetic/bond_core/1.8.4-1
-    folder: ros-noetic-bond-core/src/work
-  - git_url: https://github.com/ros-gbp/nodelet_core-release.git
-    git_rev: release/noetic/nodelet_core/1.10.0-1
-    folder: ros-noetic-nodelet-core/src/work
+  - git_url: https://github.com/ros-gbp/interactive_markers-release.git
+    git_rev: release/noetic/interactive_markers/1.12.0-1
+    folder: ros-noetic-interactive-markers/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-bond-core
-    version: 1.8.4
+  - name: ros-noetic-interactive-markers
+    version: 1.12.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -26,28 +23,24 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-rostest
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
       run:
         - python {{ python }}
-        - ros-noetic-bond
-        - ros-noetic-bondcpp
-        - ros-noetic-bondpy
-        - ros-noetic-smclib
-    script: bld_catkin.bat
-  - name: ros-noetic-nodelet-core
-    version: 1.10.0
-    requirements:
-      build:
-        - "{{ compiler('cxx') }}"
-        - "{{ compiler('c') }}"
-        - ninja
-        - cmake
-      host:
-        - python {{ python }}
-        - ros-noetic-catkin
-      run:
-        - python {{ python }}
-        - ros-noetic-nodelet
-        - ros-noetic-nodelet-topic-tools
+        - ros-noetic-rosconsole
+        - ros-noetic-roscpp
+        - ros-noetic-rospy
+        - ros-noetic-rostest
+        - ros-noetic-std-msgs
+        - ros-noetic-tf2-geometry-msgs
+        - ros-noetic-tf2-ros
+        - ros-noetic-visualization-msgs
     script: bld_catkin.bat
 
 about:
