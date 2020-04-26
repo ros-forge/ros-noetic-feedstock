@@ -5,53 +5,57 @@ conda_index:
   - 'https://raw.githubusercontent.com/ros-forge/rosdep-conda-forge/master/rosdep/conda-forge.yaml'
 
 packages_skip_by_deps:
-  - ros_comm
-  - ros
-  - roslint
-  - rqt
-  - rqt_action
-  - rqt_bag
-  - rqt_bag_plugins
-  - rqt_console
-  - rqt_dep
-  - rqt_graph
-  - rqt_launch
-  - rqt_logger_level
-  - rqt_msg
-  - rqt_plot
-  - rqt_publisher
-  - rqt_py_common
-  - rqt_py_console
-  - rqt_service_caller
-  - rqt_shell
-  - rqt_srv
-  - rqt_top
-  - rqt_topic
-  - rqt_web
-  - common_msgs
-  - tf2
-  - tf2_py
-  - tf2_ros
-  - angles
-  - geometry
-  - geometry2
-  - laser_geometry
-  - map_msgs
-  - move_base_msgs
-  - resource_retriever
-  - urdf
-  - xacro
-  - control_toolbox
-  - diagnostics
-  - urdfdom_py
-  - navigation
-  - perception_pcl
-  - image_common
-  - bond_core
-  - nodelet_core
-  - interactive_markers
+  # - ros_comm
+  # - ros
+  # - roslint
+  # - rqt
+  # - rqt_action
+  # - rqt_bag
+  # - rqt_bag_plugins
+  # - rqt_console
+  # - rqt_dep
+  # - rqt_graph
+  # - rqt_launch
+  # - rqt_logger_level
+  # - rqt_msg
+  # - rqt_plot
+  # - rqt_publisher
+  # - rqt_py_common
+  # - rqt_py_console
+  # - rqt_service_caller
+  # - rqt_shell
+  # - rqt_srv
+  # - rqt_top
+  # - rqt_topic
+  # - rqt_web
+  # - common_msgs
+  # - tf2
+  # - tf2_py
+  # - tf2_ros
+  # - angles
+  # - geometry
+  # - geometry2
+  # - laser_geometry
+  # - map_msgs
+  # - move_base_msgs
+  # - resource_retriever
+  # - urdf
+  # - xacro
+  # - control_toolbox
+  # - diagnostics
+  # - urdfdom_py
+  # - navigation
+  # - perception_pcl
+  # - image_common
+  # - bond_core
+  # - nodelet_core
+  # - interactive_markers
+  # - media_export
+  - geometry_msgs
+  - tf2_msgs
+  - rostime
 
 packages_select_by_deps:
-  - media_export
+  - tf2
 
 patch_dir: patch
