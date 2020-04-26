@@ -49,8 +49,9 @@ packages_skip_by_deps:
   - image_common
   - bond_core
   - nodelet_core
+  - interactive_markers
 
 packages_select_by_deps:
-  - interactive_markers
+  - media_export
 
 patch_dir: patch

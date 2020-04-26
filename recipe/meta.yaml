@@ -3,17 +3,17 @@ package:
   version: 2020.04.26
 
 source:
-  - git_url: https://github.com/ros-gbp/interactive_markers-release.git
-    git_rev: release/noetic/interactive_markers/1.12.0-1
-    folder: ros-noetic-interactive-markers/src/work
+  - git_url: https://github.com/ros-gbp/media_export-release.git
+    git_rev: release/noetic/media_export/0.3.0-1
+    folder: ros-noetic-media-export/src/work
 
 build:
   number: 0
   skip: true  # [not win64]
 
 outputs:
-  - name: ros-noetic-interactive-markers
-    version: 1.12.0
+  - name: ros-noetic-media-export
+    version: 0.3.0
     requirements:
       build:
         - "{{ compiler('cxx') }}"
@@ -23,24 +23,8 @@ outputs:
       host:
         - python {{ python }}
         - ros-noetic-catkin
-        - ros-noetic-rosconsole
-        - ros-noetic-roscpp
-        - ros-noetic-rospy
-        - ros-noetic-rostest
-        - ros-noetic-std-msgs
-        - ros-noetic-tf2-geometry-msgs
-        - ros-noetic-tf2-ros
-        - ros-noetic-visualization-msgs
       run:
         - python {{ python }}
-        - ros-noetic-rosconsole
-        - ros-noetic-roscpp
-        - ros-noetic-rospy
-        - ros-noetic-rostest
-        - ros-noetic-std-msgs
-        - ros-noetic-tf2-geometry-msgs
-        - ros-noetic-tf2-ros
-        - ros-noetic-visualization-msgs
     script: bld_catkin.bat
 
 about:
