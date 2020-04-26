@@ -1,0 +1,52 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b057f3bcb..3df78e6ad 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -23,7 +23,7 @@ add_dependencies(tf2 ${catkin_EXPORTED_TARGETS})
+ install(TARGETS tf2
+   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
++  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+ )
+ 
+ install(DIRECTORY include/${PROJECT_NAME}/
+
+diff --git a/include/tf2/impl/convert.h b/include/tf2/impl/convert.h
+index 6ccca3128..6b68ccdd4 100644
+--- a/include/tf2/impl/convert.h
++++ b/include/tf2/impl/convert.h
+@@ -55,21 +55,33 @@ template <>
+ template <typename A, typename B>
+ inline void Converter<true, false>::convert(const A& a, B& b)
+ {
++#ifdef _MSC_VER
++  tf2::fromMsg(a, b);
++#else
+   fromMsg(a, b);
++#endif
+ }
+ 
+ template <>
+ template <typename A, typename B>
+ inline void Converter<false, true>::convert(const A& a, B& b)
+ {
++#ifdef _MSC_VER
++  b = tf2::toMsg(a);
++#else
+   b = toMsg(a);
++#endif
+ }
+ 
+ template <>
+ template <typename A, typename B>
+ inline void Converter<false, false>::convert(const A& a, B& b)
+ {
++#ifdef _MSC_VER
++  tf2::fromMsg(tf2::toMsg(a), b);
++#else
+   fromMsg(toMsg(a), b);
++#endif
+ }
+ 
+ }
