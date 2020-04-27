@@ -51,8 +51,9 @@ packages_skip_by_deps:
   - nodelet_core
   - interactive_markers
   - media_export
+  - ros_control
 
 packages_select_by_deps:
-  - ros_control
+  - ros_controllers
 
 patch_dir: patch
